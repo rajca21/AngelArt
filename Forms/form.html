@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Skulpture">
+    <meta name="description" content="Online prodaja skulptura i drugih umetničkih dela">
+    <meta name="author" content="SANS">
+    
+    <title>AngelArt | Naručivanje</title>
+
+    <link rel="shortcut icon" href="../Pics/favicon/logo.png">
+    <link rel="stylesheet" href="../Styles/style.css">
+    <script src="../Script/script.js"></script>
+</head>
+
+<body>
+
+    <header class="header">
+        <div>
+            <a href="../HomePage/homepage.html">
+                <img src="../Pics/header/gg.jpg" class="headerPic" alt="gg">
+            </a>
+        </div>
+        <div class="navigation">
+            <div></div>
+            <div>
+                <a href="../HomePage/homepage.html">POČETNA</a>
+            </div>
+            <div>
+                <a href="../AboutUs/about.html">O NAMA</a>
+            </div>
+            <div>
+                <a href="../Articles/articles.html">SKULPTURE</a> 
+            </div>
+            <div>
+                <a href="../Materials/materials.html">MATERIJALI</a>
+            </div>
+            <div>
+                <a href="../Collages/collages.html">KOLAŽI</a>
+            </div>
+            <div></div>
+        </div>
+    </header>
+
+    <div class="formbody">
+        <div class="formorder">
+            <form class="order" action="../HomePage/homepage.html" name="narucivanje" onsubmit="return validation()">
+                <label for="ordername">Ime:</label><br>
+                <input type="text" id="ordername" size="45%"><br>
+                <label for="orderlastname">Prezime:</label><br>
+                <input type="text" id="orderlastname" size="45%"><br>
+                <label for="ordermail">E-mail:</label><br>
+                <input type="email" id="ordermail" size="45%"><br>
+                <label for="ordernum">Broj telefona:</label><br>
+                <input type="text" id="ordernum" size="45%" pattern="([0-9])+(+){10,}"><br>
+                <label for="orderstreet">Ulica:</label><br>
+                <input type="text" id="orderstreet" size="45%"><br>
+                <div class="formgrid">
+                    <div class="ordergrid">
+                        <label for="orderstnum">Broj:</label><br>
+                        <input type="text" id="orderstnum" size="10%">
+                    </div>
+                    <div class="ordergrid">
+                        <label for="orderpost">Poštanski broj:</label><br>
+                        <input type="text" id="orderpost" size="10%">
+                    </div>
+                    <div></div>
+                </div>
+                <div class="formgrid">
+                    <div class="ordergrid">
+                        <label for="orderfloor">Sprat:</label><br>
+                        <input type="text" id="orderfloor" size="10%">
+                    </div>
+                    <div class="ordergrid">
+                        <label for="ordercity">Grad:</label><br>
+                        <input type="text" id="ordercity" size="17%">
+                    </div>
+                    <div></div>
+                </div>
+                <div class="formgrid">
+                    <div class="ordergrid">
+                        <label for="orderflat">Stan:</label><br>
+                        <input type="text" id="orderflat" size="10%">
+                    </div>
+                    <div class="ordergrid">
+                        <label for="ordercountry">Država</label><br>
+                        <input type="text" id="ordercountry" size="17%">
+                    </div>
+                    <div></div>
+                </div>
+                <label for="orderinstructions">Dodatne instrukcije u vezi isporuke:</label><br>
+                <input type="text" id="orderinstructions" size="45%" style="padding-bottom:100px;"><br>
+                <p id="kkk"></p>
+                <input type="submit" value="Naruči" id="ordersubmit">
+            </form>
+        </div>
+        <div class="formproduct">
+            <div>
+                <img id="pic">
+            </div>
+            <div>
+                <img id="mat">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var materijal = localStorage.getItem("materijal");
+        var cena = localStorage.getItem("cena");
+        var slika = localStorage.getItem("slika");
+        pic.src = slika;
+        mat.src = "../Pics/materials/" + materijal + ".jpg";
+        kkk.innerHTML = cena;
+    </script>
+    
+
+    <footer class="footer">
+        <div></div>
+        <div class="kontakt">
+            <br>
+            <h1>
+                Kontakt
+            </h1> <br>
+            <ul style="list-style-type:none;">
+                <li><a href="mailto:angelart337@gmail.com">angelart337@gmail.com</a></li>
+                <li><a href="tel:+381621116254">+381 62 111 6254</a></li>
+                <li>Jelenka Mihajlovića 2, Beograd</li>
+                <br><li><a href="https://www.facebook.com/AngelArt-106382174665526/" target="_blank"><img src="../Pics/social/fb.png" style="width:30px;height:30px;" alt="Facebook icon"></a>
+            &nbsp        <a href="https://www.instagram.com/angelart.art/" target="_blank"><img src="../Pics/social/ig.png" style="width:30px;height:30px;" alt="Instagram icon"></a></li>
+            </ul>
+        </div>
+        <div></div>
+        <div class="tabela">
+            <table class="logotabela">
+                <tr>
+                    <td>
+                        <img src="../Pics/logo & name/logo.png" style="width:180px;height:180px ;" alt="AngelArt logo">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="../Pics/logo & name/name2.png" style="width: 180px; height:27px;" alt="AngelArt">
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div></div>
+    </footer>
+    
+</body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Skulpture">
+    <meta name="description" content="Online prodaja skulptura i drugih umetničkih dela">
+    <meta name="author" content="SANS">
+    
+    <title>AngelArt</title>
+
+    <link rel="shortcut icon" href="../Pics/favicon/logo.png">
+    <link rel="stylesheet" href="../Styles/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="../Script/script.js"></script>
+</head>
+<body>
+    
+    <header class="header">
+        <div>
+            <a href="../HomePage/homepage.html">
+                <img src="../Pics/header/birth-of-venusssss.jpg" class="headerPic" alt="birth-of-venus">
+            </a>
+        </div>
+        <div class="navigation">
+            <div class="navigationOption-1"></div>
+            <div class="navigationOption-2">
+                <a href="../HomePage/homepage.html"><b>POČETNA</b></a>
+            </div>
+            <div class="navigationOption-3">
+                <a href="../AboutUs/about.html">O NAMA</a>
+            </div>
+            <div class="navigationOption-4">
+                <a href="../Articles/articles.html">SKULPTURE</a> 
+            </div>
+            <div class="navigationOption-5">
+                <a href="../Materials/materials.html">MATERIJALI</a>
+            </div>
+            <div class="navigationOption-6">
+                <a href="../Collages/collages.html">KOLAŽI</a>
+            </div>
+            <div class="navigationOption-7"></div>
+        </div>
+    </header>
+
+    <div class="slideshow">
+        <div class="slide fade">
+            <img src="../Pics/slideshow/slide1.jpg" style="width:100%;" alt="dete">
+            <a class="hpbutton1" href="../Articles/articles.html">Uverite se u<br>kvalitet naših<br>skulptura</a>
+        </div>
+        <div class="slide fade">
+            <img src="../Pics/slideshow/slide2.jpg" style="width:100%;" alt="roditelji">
+            <a class="hpbutton1" href="../Collages/collages.html">Kolaži koji<br>inspirišu</a>
+        </div>
+        <div class="slide fade">
+            <img src="../Pics/slideshow/slide3.jpg" style="width:100%;" alt="deca">
+            <a class="hpbutton1" href="../Materials/materials.html">Istražite<br>materijale</a>
+        </div>
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a> <!--klikom na dugme poziva se funkcija plusSlides-->
+        <a class="next" onclick="plusSlides(1)">&#10095;</a> <!--klikom na dugme poziva se funkcija plusSlides-->
+    </div>
+
+    <div class="accordion" id="accordion">
+        <h3>Skulpture</h3>
+        <div class="accordionsec">
+            <div class="accordionCol">
+                <div class="zoom">
+                    <a href="../ArticlesEach/jabuka.html">
+                        <img class="art" src="../Pics/skulpture/jabuka.png" onclick="sacuvajOblik(src)">
+                    </a>
+                </div>
+            </div>
+            <div class="accordionCol">
+                <div class="zoom">
+                    <a href="../ArticlesEach/krompir.html">
+                        <img class="art" src="../Pics/skulpture/krompir.png" onclick="sacuvajOblik(src)">
+                    </a>
+                </div>
+            </div>
+            <div class="accordionCol">
+                <div class="zoom">
+                    <a href="../ArticlesEach/celija.html">
+                        <img class="art" src="../Pics/skulpture/celija.png" onclick="sacuvajOblik(src)">
+                    </a>
+                </div>
+            </div>
+            <div class="accordionCol">
+                <div class="zoom">
+                    <a href="../ArticlesEach/oblak.html">
+                        <img  class="art" src="../Pics/skulpture/oblak.png" onclick="sacuvajOblik(src)">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <h3>Kolaži</h3>
+        <div class="accordionsec">
+            <div class="accordionCol">
+                <div class="zoomcoll">
+                    <a href="../CollagesEach/collage33.html">
+                        <img class="art" src="../Pics/collages/kolaz33.jpg" onclick="sacuvajOblik(src)">
+                    </a>
+                </div>
+            </div>
+            <div class="accordionCol">
+                <div class="zoomcoll">
+                    <a href="../CollagesEach/collage09.html">
+                        <img class="art" src="../Pics/collages/kolaz09.jpg" onclick="sacuvajOblik(src)">
+                    </a>
+                </div>
+            </div>
+            <div class="accordionCol">
+                <div class="zoomcoll">
+                    <a href="../CollagesEach/collage05.html">
+                        <img class="art" src="../Pics/collages/kolaz05.jpg" onclick="sacuvajOblik(src)">
+                    </a>
+                </div>
+            </div>
+            <div class="accordionCol">
+                <div class="zoomcoll">
+                    <a href="../CollagesEach/collage03.html">
+                        <img class="art" src="../Pics/collages/kolaz03.jpg" onclick="sacuvajOblik(src)">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var slideIndex = 0; 
+        showSlides(); //pozivanje funkcije showSlides
+        
+        function showSlides() {
+          var i;
+          var slides = document.getElementsByClassName("slide"); //pravljenje liste elemenata klase slide
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none"; //za svaki član niza postavlja se display style none
+          }
+          slideIndex++; //nakon prvog poziva funkcije slideIndex je 1, nakon drugog 2 itd.
+          if (slideIndex > slides.length) {slideIndex = 1} //kada se dođe do kraja niza, vraća se na prvi slide 
+          slides[slideIndex-1].style.display = "block"; //prikazivanje slajda
+          setTimeout(showSlides, 10000); // Slika/slajd se menja na 10 sekundi
+        }
+
+
+        function plusSlides(n) {
+            showSlides1(slideIndex += n); //pozivanje funkcije showSlides1
+        }
+        function showSlides1(n) {
+            var i;
+            var slides = document.getElementsByClassName("slide");//pravljenje liste elemenata klase slide
+            if (n > slides.length) {slideIndex = 1} //kada n bude veće od dužine liste, vraća se na prvi slajd 
+            if (n < 1) {slideIndex = slides.length}//ako je n manje od jedan, postavlja se na poslendji slajd
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none"; //za svaki član niza postavlja se display style none
+            }
+            slides[slideIndex-1].style.display = "block";//prikazivanje slajda
+        }
+
+        
+        function sacuvajOblik(source){
+             localStorage.setItem("slika",source);//čuvanje slike izabrane skulpture ili kolaža
+        }
+    
+
+    </script>
+
+
+    <footer class="footer">
+        <div></div>
+        <div class="kontakt">
+            <br>
+            <h1>
+                Kontakt
+            </h1> 
+            <br>
+            <ul style="list-style-type:none;">
+                <li><a href="mailto:angelart.sculptures@gmail.com">angelart.sculptures@gmail.com</a></li>
+                <li><a href="tel:+381-62-111-6254">+381 62 111 6254</a></li>
+                <li>Jelenka Mihajlovića 2, Beograd</li><br>
+                <li><a href="https://www.facebook.com/AngelArt-106382174665526/" target="_blank"><img src="../Pics/social/fb.png" style="width:30px;height:30px;" alt="Facebook icon"></a>
+                    &nbsp <a href="https://www.instagram.com/angelart.art/" target="_blank"><img src="../Pics/social/ig.png" style="width:30px;height:30px;" alt="Instagram icon"></a></li>
+            </ul>
+        </div>
+        <div></div>
+        <div class="tabela">
+            <table class="logotabela">
+                <tr>
+                    <td>
+                        <img src="../Pics/logo & name/logo.png" style="width:180px;height:180px ;" alt="AngelArt logo">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="../Pics/logo & name/name2.png" style="width: 180px; height:27px;" alt="AngelArt">
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div></div>
+    </footer>
+
+</body>
+</html>

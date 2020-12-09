@@ -1,0 +1,668 @@
+* {
+    padding: 0;
+    margin: 0; 
+}
+
+body {
+    background-color: rgb(40,40,40);
+}
+
+/*HEADER*/
+
+.headerPic {
+    width: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+    [class="headerPic"] {
+      width: 100%;
+    }
+    [class*="navigationOption-"] {
+        width: 100%;
+    }
+  }
+
+.navigation {
+    display: grid; 
+    grid-template-columns: repeat(7,1fr);
+    /*7 kolona, opciono u zavisnosti od dodavanja novih opcija u meniju*/
+    background-color: black;
+    position: relative;
+    font-size:20px;
+    width: auto;
+    padding: 10px;
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    /*border: 1px solid rgb(20,20,20);
+    border-radius: 7px;
+    -webkit-box-decoration-break: clone;
+    -o-box-decoration-break: clone;
+    box-decoration-break: clone;*/
+}
+
+@media only screen and (max-width: 600px){
+    [class="navigation"] {
+        display: grid;
+        grid-template-columns: 1fr;
+        padding:0;
+    }
+}
+
+.navigation a:link {
+    color:white;
+    text-decoration: none;
+}
+.navigation a:visited {
+    color: white;
+    text-decoration: none;
+}
+.navigation a:hover {
+    color: powderblue;
+    text-decoration: none;
+}
+
+/*END OF HEADER*/
+
+
+
+/*HOMEPAGE SLIDESHOW*/
+
+.slideshow {
+    position: relative;
+    margin: auto;
+  }
+  
+.slide {
+    display: none;
+  }
+  
+.fade { /*ulazna animacija slajdova*/
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+@-webkit-keyframes fade {
+    from {opacity: 0.5}
+    to {opacity: 1}
+  }
+@keyframes fade {
+    from {opacity: 0.5}
+    to {opacity: 1} 
+  }
+
+/*HOMEPAGE SLIDESHOW BUTTONS*/
+
+.prev, .next { /*dugmići za menjanje slajdova*/
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+  
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+.hpbutton1:hover {
+    background-color: rgba(0,0,0,0.5);
+}
+
+.hpbutton1 { /*dugme na slideshow-u*/
+    background-color: rgba(0,0,0,0.3);
+    cursor: pointer;
+    position: absolute;
+    margin-top: 8.6vw;
+    left: 20vw;
+    padding: 1vw 2vw 1vw 2vw;
+    font-weight: bold;
+    font-size: 5vw;
+    color: white;
+    text-decoration: none;
+    transition: 0.6s ease;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+}
+
+  
+/*END OF HOMEPAGE SLIDESHOW BUTTONS*/
+
+/*END OF HOMEPAGE SLIDESHOW*/
+
+
+
+/*ACCORDION*/
+
+.accordion > h3 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color:white;
+    font-size: 30px;
+    padding-left: 5vw;
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+}
+
+.accordionsec {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+}
+
+@media only screen and (max-width: 600px){
+    [class="accordionsec"] {
+        display: grid;
+        grid-template-columns: 1fr;
+}
+}
+.accordionCol {
+    text-align: center;
+    padding-top: 2vw;
+    padding-bottom: 2vw;
+    background-color: #514f4a;
+}
+
+/*END OF ACCORDION*/
+
+
+
+/*ABOUT US*/
+
+.about {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.abouthead {
+    padding: 30px;
+    text-align: center;
+    background-color: rgb(60,60,60);
+}
+
+.aboutbody {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color:  rgb(100,100,100);
+    font-size: 30px;
+}
+
+@media only screen and (max-width: 600px){
+    [class="aboutbody"] {
+        display: grid;
+        grid-template-columns: 1fr;
+}
+}
+
+.aboutbodytext {
+    padding: 20px;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.aboutbodypics {
+    background-color: rgb(100,100,100);
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+}
+
+.aboutbodytext a:link {
+    color: white;
+    text-decoration: none;
+}
+
+.aboutbodytext a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+.aboutbodytext a:hover {
+    color: powderblue;
+    text-decoration: none;
+}
+
+
+/*END OF ABOUT US*/
+
+
+/*SCULPTURES*/
+
+.skulpture {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    text-align: center;
+    align-content: center;
+    color: black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+@media only screen and (max-width: 600px) {
+    [class="skulpture"] {
+        display:grid;
+        grid-template-columns: 1fr;
+    }
+}
+
+.skulpture a:link{
+    color: rgb(20,20,20);
+    text-decoration: none;
+}
+.skulpture a:visited{
+    color: black;
+    text-decoration: none;
+}
+.skulpture a:hover{
+    color: powderblue;
+    text-decoration: none;
+}
+
+.skulpture > div {
+    background-color: rgb(180,180,180) ;
+    padding-top: 40px;
+    padding-bottom: 20px;
+}
+.skulpture > div:nth-child(8n+5) {
+    background-color:rgb(200,200,200);
+}
+.skulpture > div:nth-child(8n+6) {
+    background-color:rgb(200,200,200);
+}
+.skulpture > div:nth-child(8n+7) {
+    background-color:rgb(200,200,200);
+} 
+.skulpture > div:nth-child(8n+8) {
+    background-color:rgb(200,200,200);
+} /*naizmenično menjanje back-color-a u svakom redu*/
+
+.art {
+    width: auto; 
+    max-height: 300px; 
+    max-width: 100%;
+}
+
+.caption {
+    padding: 10px;
+}
+
+/*END OF SCULPTURES*/
+
+
+
+/*MATERIALS BODY*/
+
+.materijali {
+    background-color: rgb(40,40,40);
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    text-align: center;
+    color: white;
+    font-size:20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+@media only screen and (max-width: 600px) {
+    [class="materijali"] {
+        display:grid;
+        grid-template-columns: 1fr;
+    }
+}
+
+.materijali a:link{
+    color: white;
+    text-decoration: none;
+}
+.materijali a:visited{
+    color: white;
+    text-decoration: none;
+}
+.materijali a:hover{
+    color: powderblue;
+    text-decoration: none;
+}
+
+.materijali > div {
+    background-color: rgb(40,40,40) ;
+    padding-top: 40px;
+    padding-bottom: 20px;
+}
+
+.matimg {
+    width: 300px;
+    height: 300px;
+} 
+
+.zoom { 
+    transition: transform.2s;
+}
+.zoom:hover { /*povećanje slika kada se pređe kursorom preko njih*/
+    transform: scale(1.2);
+}
+
+
+.materijali > div:nth-child(6n+4) {
+    background-color:rgb(50,50,50);
+}
+.materijali > div:nth-child(6n+5) {
+    background-color:rgb(50,50,50);
+}
+.materijali > div:nth-child(6n+6) {
+    background-color:rgb(50,50,50);
+} /*naizmenično menjanje back-color-a u svakom redu*/
+
+/*END OF MATERIALS BODY*/
+
+
+
+/*EACH MATERIAL & EACH ARTICLE*/
+
+.description {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+
+.column {
+    text-align: center;
+    padding: 7vw;
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;     
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.column > h3 {
+    font-size: 2vw;
+}
+
+.column > p {
+    font-size: 1vw;
+}
+
+.column1 {
+    text-align: center;
+    padding: 7vw;
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.column1a {
+    text-align: center;
+    color:white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding:1vw;
+}
+
+
+.centered > p {
+    font-size: 2vw;
+    padding:1vw;
+}
+
+.matforma {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 2vw;
+}
+
+#narucivanje {
+    font-size: 2vw;
+    padding: 0.5vw 1vw 0.5vw 1vw;
+    background-color: rgb(120,120,120);
+    border: 1px solid rgb(150,150,150);
+    border-radius: 7px;
+    -webkit-box-decoration-break: clone;
+    -o-box-decoration-break: clone;
+    box-decoration-break: clone;
+}
+
+#narucivanje:link {
+    color: white;
+    text-decoration: none;
+}
+#narucivanje:visited {
+    color:white;
+    text-decoration: none;
+}
+
+
+/* END OF EACH MATERIAL & EACH ARTICLE*/
+
+
+
+/* COLLAGES */
+
+.collagevert {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+@media only screen and (max-width: 600px) {
+    [class="collagevert"] {
+        display:grid;
+        grid-template-columns: 1fr;
+    }
+}
+
+.collagevertdiv {
+    padding-top:10px;
+    padding-bottom:10px;
+    text-align: center;
+}
+
+.collagevertimg {
+    max-height: 450px;
+    width:auto;
+}
+
+.collagehor {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+@media only screen and (max-width: 600px) {
+    [class="collagehor"] {
+        display:grid;
+        grid-template-columns: 1fr;
+    }
+}
+
+.collagehordiv {
+    padding-top: 20px;
+    padding-bottom:20px;
+    text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+    [class="collagehordiv"] {
+        padding:0;
+    }
+}
+
+.collagehorimg {
+    max-width: 450px;
+    height:auto;
+}
+
+@media only screen and (max-width: 600px) {
+    [class="collagehorimg"] {
+        max-width:300px;
+    }
+}
+
+.zoomcoll { 
+    transition: transform.2s;
+}
+.zoomcoll:hover { /*povećanje slika kada se pređe kursorom preko njih*/
+    transform: scale(1.1);
+}
+
+
+/*END OF COLLAGES*/
+
+
+
+/*EACH COLLAGE*/
+
+.centeredcoll {
+    font-size: 2vw;
+    padding-top: 30%;
+}
+
+/*END OF EACH COLLAGE*/
+
+
+
+/*FORM*/
+
+.formbody {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+
+@media only screen and (max-width: 600px) {
+    [class="formbody"] {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}
+
+.formorder {
+    background-color: rgb(80,80,80);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+.order {
+    padding-top:2px;;
+    padding-left:20%;
+    font-size:20px;
+    color: white;
+}
+
+@media only screen and (max-width: 600px) {
+    [class="order"] {
+        padding-left:0;
+    }
+}
+
+.order > input {
+    border:1px solid black;
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;  
+}
+
+.formgrid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    text-align: left;
+}
+
+@media only screen and (max-width: 600px) {
+    [class="formgrid"] {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.ordergrid > input {
+    border:1px solid black;
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;  
+}
+
+#ordersubmit {
+    padding: 5px 10px 5px 10px;
+    margin-left: 33%;
+    margin-top: 10px;
+    text-align: center;
+    background-color: rgb(200,200,200);
+}
+
+#kkk {
+    padding-top:5px;
+    font-size: 25px;
+}
+
+.formproduct {
+    background-color: rgb(200,200,200);
+    text-align: center;
+}
+
+
+#pic {
+    width:auto; 
+    max-height:550px; 
+    max-width:100%;
+    padding: 30px;
+}
+
+#mat {
+    width:100px;
+    height:100px;
+    border: 1px solid white;
+}
+
+
+
+/*END OF FORM*/
+
+
+
+/*FOOTER*/
+
+.footer {
+    background-color: black;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 2fr 1fr;
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+@media only screen and (max-width: 600px) {
+    [class="footer"] {
+        display: grid;
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}
+
+.kontakt {
+    text-align: center;
+    color: white;
+    padding: 5% 0 5% 0;
+    font-size: 20px;
+}
+
+.kontakt a:link {
+    color: white;
+    text-decoration: none;
+}
+.kontakt a:visited {
+    color: white;
+    text-decoration: none;
+}
+.kontakt a:hover {
+    color:powderblue;
+    text-decoration: none;
+}
+
+.tabela {
+    text-align: center;
+}
+
+.logotabela {
+    padding: 10% 0 10% 0;
+    text-align: center;
+    width: 100%;
+}
+
+/*END OF FOOTER*/
