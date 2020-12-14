@@ -1,6 +1,7 @@
-* {
-    padding: 0;
+* { 
+    padding: 0; /*Kako ne bi bilo okvira na svim stranicama*/
     margin: 0; 
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 body {
@@ -13,15 +14,6 @@ body {
     width: 100%;
 }
 
-@media only screen and (max-width: 600px) {
-    [class="headerPic"] {
-      width: 100%;
-    }
-    [class*="navigationOption-"] {
-        width: 100%;
-    }
-  }
-
 .navigation {
     display: grid; 
     grid-template-columns: repeat(7,1fr);
@@ -32,15 +24,9 @@ body {
     width: auto;
     padding: 10px;
     text-align: center;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    /*border: 1px solid rgb(20,20,20);
-    border-radius: 7px;
-    -webkit-box-decoration-break: clone;
-    -o-box-decoration-break: clone;
-    box-decoration-break: clone;*/
 }
 
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 850px){ /*responzivnost*/
     [class="navigation"] {
         display: grid;
         grid-template-columns: 1fr;
@@ -69,7 +55,6 @@ body {
 
 .slideshow {
     position: relative;
-    margin: auto;
   }
   
 .slide {
@@ -96,7 +81,7 @@ body {
 .prev, .next { /*dugmići za menjanje slajdova*/
     cursor: pointer;
     position: absolute;
-    top: 50%;
+    top: 48%;
     width: auto;
     padding: 16px;
     margin-top: -22px;
@@ -133,7 +118,6 @@ body {
     color: white;
     text-decoration: none;
     transition: 0.6s ease;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     text-align: center;
 }
 
@@ -147,7 +131,6 @@ body {
 /*ACCORDION*/
 
 .accordion > h3 {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color:white;
     font-size: 30px;
     padding-left: 5vw;
@@ -155,23 +138,45 @@ body {
     padding-bottom: 1vw;
 }
 
-.accordionsec {
+.accordionSec {
     display: grid;
     grid-template-columns: repeat(4,1fr);
 }
 
-@media only screen and (max-width: 600px){
-    [class="accordionsec"] {
-        display: grid;
-        grid-template-columns: 1fr;
-}
-}
 .accordionCol {
     text-align: center;
     padding-top: 2vw;
     padding-bottom: 2vw;
     background-color: #514f4a;
 }
+
+.accart {
+    width: auto; 
+    max-height: 300px; 
+    max-width: 100%;
+}
+
+@media only screen and (max-width: 520px){
+    [class="accart"] {
+        max-height: 100px;
+    }
+}
+@media only screen and (min-width: 520px){
+    [class="accart"] {
+        max-height: 150px;
+    }
+}
+@media only screen and (min-width: 700px){
+    [class="accart"] {
+        max-height: 200px;
+    }
+}
+@media only screen and (min-width: 950px){
+    [class="accart"] {
+        max-height: 300px; 
+    }
+}
+
 
 /*END OF ACCORDION*/
 
@@ -180,7 +185,7 @@ body {
 /*ABOUT US*/
 
 .about {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: white;
 }
 
 .abouthead {
@@ -196,11 +201,13 @@ body {
     font-size: 30px;
 }
 
-@media only screen and (max-width: 600px){
+
+@media only screen and (max-width: 1200px){
     [class="aboutbody"] {
         display: grid;
         grid-template-columns: 1fr;
-}
+        font-size:20px;
+    }
 }
 
 .aboutbodytext {
@@ -240,29 +247,26 @@ body {
     display: grid;
     grid-template-columns: repeat(4,1fr);
     text-align: center;
-    align-content: center;
     color: black;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 700px) {
     [class="skulpture"] {
         display:grid;
         grid-template-columns: 1fr;
     }
 }
-
-.skulpture a:link{
-    color: rgb(20,20,20);
-    text-decoration: none;
+@media only screen and (min-width: 700px) {
+    [class="skulpture"] {
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+    }
 }
-.skulpture a:visited{
-    color: black;
-    text-decoration: none;
-}
-.skulpture a:hover{
-    color: powderblue;
-    text-decoration: none;
+@media only screen and (min-width: 1400px) {
+    [class="skulpture"] {
+        display:grid;
+        grid-template-columns: repeat(4,1fr);
+    }
 }
 
 .skulpture > div {
@@ -309,10 +313,11 @@ body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 950px) {
     [class="materijali"] {
         display:grid;
         grid-template-columns: 1fr;
+        font-size:25px;
     }
 }
 
@@ -339,6 +344,12 @@ body {
     width: 300px;
     height: 300px;
 } 
+@media only screen and (max-width: 950px) {
+    [class="matimg"] {
+        width:400px;
+        height:400px;
+    }
+}
 
 .zoom { 
     transition: transform.2s;
@@ -369,37 +380,59 @@ body {
     grid-template-columns: repeat(2,1fr);
 }
 
+.descriptionmat {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+@media only screen and (max-width: 1200px) {
+    [class="descriptionmat"] {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+}
+
+.columna {
+    text-align: center;
+    padding: 50px;
+}
+
+.materijalpic {
+    width:500px;
+    height:500px;
+}
+@media only screen and (max-width: 700px) {
+    [class="materijalpic"] {
+      width:400px;
+      height:400px;
+    }
+}
 .column {
     text-align: center;
     padding: 7vw;
-    color: white;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;     
+    color: white;     
     text-align: justify;
     text-justify: inter-word;
 }
 
 .column > h3 {
-    font-size: 2vw;
+    font-size: 30px;
 }
 
 .column > p {
-    font-size: 1vw;
+    font-size: 20px;
 }
 
 .column1 {
     text-align: center;
     padding: 7vw;
     color: white;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .column1a {
     text-align: center;
     color:white;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     padding:1vw;
 }
-
 
 .centered > p {
     font-size: 2vw;
@@ -407,7 +440,6 @@ body {
 }
 
 .matforma {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 2vw;
 }
 
@@ -444,10 +476,28 @@ body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 870px) {
     [class="collagevert"] {
         display:grid;
         grid-template-columns: 1fr;
+    }
+}
+@media only screen and (min-width: 870px) {
+    [class="collagevert"] {
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media only screen and (min-width: 1150px) {
+    [class="collagevert"] {
+        display:grid;
+        grid-template-columns: repeat(3,1fr);
+    }
+}
+@media only screen and (min-width: 1400px) {
+    [class="collagevert"] {
+        display:grid;
+        grid-template-columns: repeat(4,1fr);
     }
 }
 
@@ -468,13 +518,24 @@ body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 870px) {
     [class="collagehor"] {
         display:grid;
         grid-template-columns: 1fr;
     }
 }
-
+@media only screen and (min-width: 870px) {
+    [class="collagehor"] {
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media only screen and (min-width: 1400px) {
+    [class="collagehor"] {
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
 .collagehordiv {
     padding-top: 20px;
     padding-bottom:20px;
@@ -528,7 +589,7 @@ body {
     grid-template-columns: repeat(2,1fr);
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1200px) {
     [class="formbody"] {
         display: grid;
         grid-template-columns: 1fr;
@@ -537,7 +598,6 @@ body {
 
 .formorder {
     background-color: rgb(80,80,80);
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 
@@ -550,14 +610,13 @@ body {
 
 @media only screen and (max-width: 600px) {
     [class="order"] {
-        padding-left:0;
+        padding-left:10px;
     }
 }
 
 .order > input {
     border:1px solid black;
-    font-size: 20px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;  
+    font-size: 20px; 
 }
 
 .formgrid {
@@ -580,6 +639,7 @@ body {
 }
 
 #ordersubmit {
+    cursor: pointer;
     padding: 5px 10px 5px 10px;
     margin-left: 33%;
     margin-top: 10px;
@@ -624,7 +684,6 @@ body {
     display: grid;
     grid-template-columns: 1fr 2fr 1fr 2fr 1fr;
     text-align: center;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 @media only screen and (max-width: 600px) {

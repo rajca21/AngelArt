@@ -53,7 +53,7 @@
                 <label for="ordermail">E-mail:</label><br>
                 <input type="email" id="ordermail" size="45%"><br>
                 <label for="ordernum">Broj telefona:</label><br>
-                <input type="text" id="ordernum" size="45%" pattern="([0-9])+(+){10,}"><br>
+                <input type="text" id="ordernum" size="45%"><br>
                 <label for="orderstreet">Ulica:</label><br>
                 <input type="text" id="orderstreet" size="45%"><br>
                 <div class="formgrid">
@@ -109,6 +109,7 @@
         var materijal = localStorage.getItem("materijal");
         var cena = localStorage.getItem("cena");
         var slika = localStorage.getItem("slika");
+
         pic.src = slika;
         mat.src = "../Pics/materials/" + materijal + ".jpg";
         kkk.innerHTML = cena;

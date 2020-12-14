@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="Skulpture">
+    <meta name="keywords" content="Skulpture Kolaži">
     <meta name="description" content="Online prodaja skulptura i drugih umetničkih dela">
     <meta name="author" content="SANS">
     
@@ -63,63 +63,63 @@
 
     <div class="accordion" id="accordion">
         <h3>Skulpture</h3>
-        <div class="accordionsec">
+        <div class="accordionSec">
             <div class="accordionCol">
                 <div class="zoom">
                     <a href="../ArticlesEach/jabuka.html">
-                        <img class="art" src="../Pics/skulpture/jabuka.png" onclick="sacuvajOblik(src)">
+                        <img class="accart" src="../Pics/skulpture/jabuka.png" onclick="sacuvajOblik(src)">
                     </a>
                 </div>
             </div>
             <div class="accordionCol">
                 <div class="zoom">
                     <a href="../ArticlesEach/krompir.html">
-                        <img class="art" src="../Pics/skulpture/krompir.png" onclick="sacuvajOblik(src)">
+                        <img class="accart" src="../Pics/skulpture/krompir.png" onclick="sacuvajOblik(src)">
                     </a>
                 </div>
             </div>
             <div class="accordionCol">
                 <div class="zoom">
                     <a href="../ArticlesEach/celija.html">
-                        <img class="art" src="../Pics/skulpture/celija.png" onclick="sacuvajOblik(src)">
+                        <img class="accart" src="../Pics/skulpture/celija.png" onclick="sacuvajOblik(src)">
                     </a>
                 </div>
             </div>
             <div class="accordionCol">
                 <div class="zoom">
                     <a href="../ArticlesEach/oblak.html">
-                        <img  class="art" src="../Pics/skulpture/oblak.png" onclick="sacuvajOblik(src)">
+                        <img  class="accart" src="../Pics/skulpture/oblak.png" onclick="sacuvajOblik(src)">
                     </a>
                 </div>
             </div>
         </div>
         <h3>Kolaži</h3>
-        <div class="accordionsec">
+        <div class="accordionSec">
             <div class="accordionCol">
                 <div class="zoomcoll">
                     <a href="../CollagesEach/collage33.html">
-                        <img class="art" src="../Pics/collages/kolaz33.jpg" onclick="sacuvajOblik(src)">
+                        <img class="accart" src="../Pics/collages/kolaz33.jpg" onclick="sacuvajOblik(src)">
                     </a>
                 </div>
             </div>
             <div class="accordionCol">
                 <div class="zoomcoll">
                     <a href="../CollagesEach/collage09.html">
-                        <img class="art" src="../Pics/collages/kolaz09.jpg" onclick="sacuvajOblik(src)">
+                        <img class="accart" src="../Pics/collages/kolaz09.jpg" onclick="sacuvajOblik(src)">
                     </a>
                 </div>
             </div>
             <div class="accordionCol">
                 <div class="zoomcoll">
                     <a href="../CollagesEach/collage05.html">
-                        <img class="art" src="../Pics/collages/kolaz05.jpg" onclick="sacuvajOblik(src)">
+                        <img class="accart" src="../Pics/collages/kolaz05.jpg" onclick="sacuvajOblik(src)">
                     </a>
                 </div>
             </div>
             <div class="accordionCol">
                 <div class="zoomcoll">
                     <a href="../CollagesEach/collage03.html">
-                        <img class="art" src="../Pics/collages/kolaz03.jpg" onclick="sacuvajOblik(src)">
+                        <img class="accart" src="../Pics/collages/kolaz03.jpg" onclick="sacuvajOblik(src)">
                     </a>
                 </div>
             </div>
@@ -127,7 +127,7 @@
     </div>
 
     <script>
-        var slideIndex = 0; 
+        var slideIndex = 0; //iterator
         showSlides(); //pozivanje funkcije showSlides
         
         function showSlides() {
@@ -139,18 +139,18 @@
           slideIndex++; //nakon prvog poziva funkcije slideIndex je 1, nakon drugog 2 itd.
           if (slideIndex > slides.length) {slideIndex = 1} //kada se dođe do kraja niza, vraća se na prvi slide 
           slides[slideIndex-1].style.display = "block"; //prikazivanje slajda
-          setTimeout(showSlides, 10000); // Slika/slajd se menja na 10 sekundi
+          setTimeout(showSlides, 5000); // Slika/slajd se menja na 5 sekundi
         }
 
-
-        function plusSlides(n) {
-            showSlides1(slideIndex += n); //pozivanje funkcije showSlides1
+        function plusSlides(n) { // n je 1 za dugme next a -1 za dugme prev
+            showSlidesButton(slideIndex += n); //pozivanje funkcije showSlides1
         }
-        function showSlides1(n) {
+
+        function showSlidesButton(m) {
             var i;
             var slides = document.getElementsByClassName("slide");//pravljenje liste elemenata klase slide
-            if (n > slides.length) {slideIndex = 1} //kada n bude veće od dužine liste, vraća se na prvi slajd 
-            if (n < 1) {slideIndex = slides.length}//ako je n manje od jedan, postavlja se na poslendji slajd
+            if (m > slides.length) {slideIndex = 1} //kada m bude veće od dužine liste, vraća se na prvi slajd 
+            if (m < 1) {slideIndex = slides.length}//ako je m manje od jedan, postavlja se na poslendji slajd
             for (i = 0; i < slides.length; i++) {
                 slides[i].style.display = "none"; //za svaki član niza postavlja se display style none
             }
@@ -158,11 +158,9 @@
         }
 
         
-        function sacuvajOblik(source){
+        function sacuvajOblik(source) {
              localStorage.setItem("slika",source);//čuvanje slike izabrane skulpture ili kolaža
         }
-    
-
     </script>
 
 

@@ -27,18 +27,18 @@ function validation() {
 
     var broj = document.forms["narucivanje"]["ordernum"].value;
     if (broj == "") {/*required*/
-        alert("Unesite broj telefona");
+        alert("Unesite broj telefona.");
         return false;
     }
     if (broj[0] == "+") {/*ako je prvi karakter +*/
         broj = broj.slice(1); /*promenljiva broj postaje samo deo iza znaka +, tj prvog karaktera*/
-        if (broj.length !== 12 && broj.length !== 13 || isNaN(broj)) { /*broj može imati 12 ili 13 karaktera ako je oblika +381, isNaN funkciaj proverava da li je broj*/
+        if (broj.length !== 11 && broj.length !== 12 || isNaN(broj)) { /*broj može imati 11 ili 12 karaktera ako je oblika +381, isNaN funkcija proverava da li je broj*/
             alert("Unesite tačan broj telefona.");
             return false;
         }
     } else {
         if (isNaN(broj)) {
-        alert("Unesite broj");
+        alert("Unesite broj.");
         return false;
         } else {
             if (broj.length !== 9 && broj.length !== 10) { /*broj može imati 9 ili 10 karaktera ako je oblika 06..*/
